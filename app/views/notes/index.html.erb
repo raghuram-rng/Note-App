@@ -1,0 +1,11 @@
+<h1>My Notes</h1>
+
+<% @notes.each do |note|%>
+  <% if note.user == current_user%>
+    <h2><%= link_to note.title, note %></h2>
+    <%= note.content%>
+    <%= note.user_id%>
+  <%end%>
+<%end%>
+
+<div><%= link_to "Add Note", new_note_path if user_signed_in? %></div>
