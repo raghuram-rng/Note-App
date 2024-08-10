@@ -3,8 +3,7 @@
 <% @notes.each do |note|%>
   <% if note.user == current_user%>
     <h2><%= link_to note.title, note %></h2>
-    <%= note.content%>
-    <%= note.user_id%>
+    <h1><%= note.content%></h1>
   <%end%>
 <%end%>
 

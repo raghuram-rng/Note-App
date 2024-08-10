@@ -7,12 +7,10 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%
-=begin%>
- <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css"> 
-<%
-=end%>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
     <%= javascript_importmap_tags %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
   </head>
   <body>
   <%if user_signed_in?%>
@@ -22,9 +20,6 @@
     <h2><%=link_to "Sign Up", new_user_registration_path %></h2>
     <h2><%=link_to "Sign In", new_user_session_path %></h2>
   <%end%>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
     <%= yield %>
   </body>
 </html>
