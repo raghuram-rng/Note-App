@@ -1,10 +1,8 @@
-<h1>My Notes</h1>
+<h1><%= "My Notes" if user_signed_in? %></h1>
 
 <% @notes.each do |note|%>
   <% if note.user == current_user%>
-    <h2><%= link_to note.title, note %></h2>
-    <h1><%= note.content%></h1>
+    <h5><%= link_to note.title, note %></h2>
+    <h6><%= note.content%></h1>
   <%end%>
 <%end%>
-
-<div><%= link_to "Add Note", new_note_path if user_signed_in? %></div>
