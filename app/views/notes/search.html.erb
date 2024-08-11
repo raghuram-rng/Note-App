@@ -1,5 +1,8 @@
 <h3> Search Results </h3>
 
-<% @results.each do |results| %>
-  
+<% @notes.each do |note|%>
+  <% if note.user == current_user%>
+    <h5><%= link_to note.title, note %></h2>
+    <h6><%= note.content%></h1>
+  <%end%>
 <%end%>

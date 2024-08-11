@@ -1,5 +1,5 @@
 class NotesController <  ApplicationController
-  before_action :set_note, except: [:index, :new, :create]
+  before_action :set_note, except: [:index, :new, :create, :search]
   before_action :authenticate_user!, except: [:index,:show]
   before_action :correct_user, only: [:edit,:destroy,:update]
   def index
@@ -27,6 +27,10 @@ class NotesController <  ApplicationController
   end
 
   def edit
+  end
+
+  def search
+    @notes =  Note.search_by_content(params[:q])
   end
 
   def update
