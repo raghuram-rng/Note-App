@@ -30,7 +30,8 @@ class NotesController <  ApplicationController
   end
 
   def search
-    @notes =  Note.search_by_content(params[:q])
+    @parameter = params[:q].downcase
+    @notes = Note.all.where("lower(content) LIKE :search",search: "%#{@parameter}%")
   end
 
   def update
