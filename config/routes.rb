@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get "/notes/search", to: "notes#search"
   resources :notes
-
+  
   # Defines the root path route ("/")
   root "notes#index"
 end

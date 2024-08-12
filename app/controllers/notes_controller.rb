@@ -1,9 +1,11 @@
 class NotesController <  ApplicationController
   before_action :set_note, except: [:index, :new, :create, :search]
-  before_action :authenticate_user!, except: [:index,:show]
+  before_action :authenticate_user!, except: [:index]
   before_action :correct_user, only: [:edit,:destroy,:update]
   def index
-    @notes = Note.all
+    if user_signed_in?
+      @notes = current_user.notes
+    end
   end
 
   def show
