@@ -71,3 +71,7 @@ gem 'devise', '~> 4.9', '>= 4.9.4'
 gem 'ransack'
 
 gem 'pg_search'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 6.0'
+end
